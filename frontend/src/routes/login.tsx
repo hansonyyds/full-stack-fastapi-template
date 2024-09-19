@@ -78,7 +78,7 @@ function Login() {
       >
         <Image
           src={Logo}
-          alt="FastAPI logo"
+          alt="FastAPI 标志"
           height="auto"
           maxW="2xs"
           alignSelf="center"
@@ -88,10 +88,10 @@ function Login() {
           <Input
             id="username"
             {...register("username", {
-              required: "Username is required",
+              required: "用户名是必填项",
               pattern: emailPattern,
             })}
-            placeholder="Email"
+            placeholder="邮箱"
             type="email"
             required
           />
@@ -103,10 +103,10 @@ function Login() {
           <InputGroup>
             <Input
               {...register("password", {
-                required: "Password is required",
+                required: "密码是必填项",
               })}
               type={show ? "text" : "password"}
-              placeholder="Password"
+              placeholder="密码"
               required
             />
             <InputRightElement
@@ -118,7 +118,7 @@ function Login() {
               <Icon
                 as={show ? ViewOffIcon : ViewIcon}
                 onClick={setShow.toggle}
-                aria-label={show ? "Hide password" : "Show password"}
+                aria-label={show ? "隐藏密码" : "显示密码"}
               >
                 {show ? <ViewOffIcon /> : <ViewIcon />}
               </Icon>
@@ -127,15 +127,15 @@ function Login() {
           {error && <FormErrorMessage>{error}</FormErrorMessage>}
         </FormControl>
         <Link as={RouterLink} to="/recover-password" color="blue.500">
-          Forgot password?
+          忘记密码？
         </Link>
         <Button variant="primary" type="submit" isLoading={isSubmitting}>
-          Log In
+          登录
         </Button>
         <Text>
-          Don't have an account?{" "}
+          还没有账号？{" "}
           <Link as={RouterLink} to="/signup" color="blue.500">
-            Sign up
+            注册
           </Link>
         </Text>
       </Container>

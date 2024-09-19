@@ -74,7 +74,7 @@ function SignUp() {
         >
           <Image
             src={Logo}
-            alt="FastAPI logo"
+            alt="FastAPI 标志"
             height="auto"
             maxW="2xs"
             alignSelf="center"
@@ -82,13 +82,13 @@ function SignUp() {
           />
           <FormControl id="full_name" isInvalid={!!errors.full_name}>
             <FormLabel htmlFor="full_name" srOnly>
-              Full Name
+              全名
             </FormLabel>
             <Input
               id="full_name"
               minLength={3}
-              {...register("full_name", { required: "Full Name is required" })}
-              placeholder="Full Name"
+              {...register("full_name", { required: "全名是必填项" })}
+              placeholder="全名"
               type="text"
             />
             {errors.full_name && (
@@ -97,15 +97,15 @@ function SignUp() {
           </FormControl>
           <FormControl id="email" isInvalid={!!errors.email}>
             <FormLabel htmlFor="username" srOnly>
-              Email
+              邮箱
             </FormLabel>
             <Input
               id="email"
               {...register("email", {
-                required: "Email is required",
+                required: "邮箱是必填项",
                 pattern: emailPattern,
               })}
-              placeholder="Email"
+              placeholder="邮箱"
               type="email"
             />
             {errors.email && (
@@ -114,12 +114,12 @@ function SignUp() {
           </FormControl>
           <FormControl id="password" isInvalid={!!errors.password}>
             <FormLabel htmlFor="password" srOnly>
-              Password
+              密码
             </FormLabel>
             <Input
               id="password"
               {...register("password", passwordRules())}
-              placeholder="Password"
+              placeholder="密码"
               type="password"
             />
             {errors.password && (
@@ -131,13 +131,13 @@ function SignUp() {
             isInvalid={!!errors.confirm_password}
           >
             <FormLabel htmlFor="confirm_password" srOnly>
-              Confirm Password
+              确认密码
             </FormLabel>
 
             <Input
               id="confirm_password"
               {...register("confirm_password", confirmPasswordRules(getValues))}
-              placeholder="Repeat Password"
+              placeholder="重复密码"
               type="password"
             />
             {errors.confirm_password && (
@@ -147,12 +147,12 @@ function SignUp() {
             )}
           </FormControl>
           <Button variant="primary" type="submit" isLoading={isSubmitting}>
-            Sign Up
+            注册
           </Button>
           <Text>
-            Already have an account?{" "}
+            已经有账号了？{" "}
             <Link as={RouterLink} to="/login" color="blue.500">
-              Log In
+              登录
             </Link>
           </Text>
         </Container>

@@ -77,19 +77,19 @@ function RecoverPassword() {
       centerContent
     >
       <Heading size="xl" color="ui.main" textAlign="center" mb={2}>
-        Password Recovery
+        密码恢复
       </Heading>
       <Text align="center">
-        A password recovery email will be sent to the registered account.
+        密码恢复邮件将发送到注册的账户。
       </Text>
       <FormControl isInvalid={!!errors.email}>
         <Input
           id="email"
           {...register("email", {
-            required: "Email is required",
+            required: "邮箱是必填项",
             pattern: emailPattern,
           })}
-          placeholder="Email"
+          placeholder="邮箱"
           type="email"
         />
         {errors.email && (
@@ -97,7 +97,7 @@ function RecoverPassword() {
         )}
       </FormControl>
       <Button variant="primary" type="submit" isLoading={isSubmitting}>
-        Continue
+        继续
       </Button>
     </Container>
   )
